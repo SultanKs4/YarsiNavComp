@@ -1,0 +1,1017 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pribadi"
+            type="com.natlus.yarsinavcomp.models.Pribadi" />
+
+        <variable
+            name="parent"
+            type="com.natlus.yarsinavcomp.models.Parent" />
+
+        <variable
+            name="school"
+            type="com.natlus.yarsinavcomp.models.School" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.ResultFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textTitlePersonalData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Data Pribadi"
+                android:textColor="@color/textPopupEditTextColor"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="Nama"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTitlePersonalData" />
+
+            <TextView
+                android:id="@+id/namaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.nama}"
+                app:layout_constraintBottom_toTopOf="@+id/fakultas"
+                app:layout_constraintStart_toEndOf="@+id/nama"
+                app:layout_constraintTop_toBottomOf="@id/textTitlePersonalData" />
+
+            <TextView
+                android:id="@+id/fakultas"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Fakultas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nama" />
+
+            <TextView
+                android:id="@+id/fakultasValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.fakultas}"
+                app:layout_constraintBottom_toTopOf="@+id/prodi"
+                app:layout_constraintStart_toEndOf="@+id/fakultas"
+                app:layout_constraintTop_toBottomOf="@id/namaValue" />
+
+            <TextView
+                android:id="@+id/prodi"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Prodi Pilihan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fakultas" />
+
+            <TextView
+                android:id="@+id/prodiValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.prodi}"
+                app:layout_constraintBottom_toTopOf="@+id/status"
+                app:layout_constraintStart_toEndOf="@+id/prodi"
+                app:layout_constraintTop_toBottomOf="@id/fakultasValue" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Sta. Daftar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prodi" />
+
+            <TextView
+                android:id="@+id/statusValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.status}"
+                app:layout_constraintBottom_toTopOf="@id/password"
+                app:layout_constraintStart_toEndOf="@+id/status"
+                app:layout_constraintTop_toBottomOf="@id/prodiValue" />
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Password"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/status" />
+
+            <TextView
+                android:id="@+id/passwordValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.password}"
+                app:layout_constraintBottom_toTopOf="@id/alasan"
+                app:layout_constraintStart_toEndOf="@+id/password"
+                app:layout_constraintTop_toBottomOf="@id/statusValue" />
+
+            <TextView
+                android:id="@+id/alasan"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Alasan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/password" />
+
+            <TextView
+                android:id="@+id/alasanValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.alasan}"
+                app:layout_constraintBottom_toTopOf="@id/nik"
+                app:layout_constraintStart_toEndOf="@+id/alasan"
+                app:layout_constraintTop_toBottomOf="@id/passwordValue" />
+
+            <TextView
+                android:id="@+id/nik"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Nik"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/alasan" />
+
+            <TextView
+                android:id="@+id/nikValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.nik}"
+                app:layout_constraintBottom_toTopOf="@id/prestasi"
+                app:layout_constraintStart_toEndOf="@+id/nik"
+                app:layout_constraintTop_toBottomOf="@id/alasanValue"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/prestasi"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Prestasi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nik" />
+
+            <TextView
+                android:id="@+id/prestasiValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.prestasi}"
+                app:layout_constraintBottom_toTopOf="@id/tmpLahir"
+                app:layout_constraintStart_toEndOf="@+id/prestasi"
+                app:layout_constraintTop_toBottomOf="@id/nikValue" />
+
+            <TextView
+                android:id="@+id/tmpLahir"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Tempat Lahir"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prestasi" />
+
+            <TextView
+                android:id="@+id/tmpLahirValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.tempat}"
+                app:layout_constraintBottom_toTopOf="@id/tglLahir"
+                app:layout_constraintStart_toEndOf="@+id/tmpLahir"
+                app:layout_constraintTop_toBottomOf="@id/prestasiValue" />
+
+            <TextView
+                android:id="@+id/tglLahir"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Tanggal Lahir"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tmpLahir" />
+
+            <TextView
+                android:id="@+id/tglLahirValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.tanggal}"
+                app:layout_constraintBottom_toTopOf="@id/jK"
+                app:layout_constraintStart_toEndOf="@+id/tglLahir"
+                app:layout_constraintTop_toBottomOf="@id/tmpLahirValue" />
+
+            <TextView
+                android:id="@+id/jK"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Jns Kelamin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tglLahir" />
+
+            <TextView
+                android:id="@+id/jKValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.jenisKelamin}"
+                app:layout_constraintBottom_toTopOf="@id/warga"
+                app:layout_constraintStart_toEndOf="@+id/jK"
+                app:layout_constraintTop_toBottomOf="@id/tglLahirValue" />
+
+            <TextView
+                android:id="@+id/warga"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Warga"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/jK" />
+
+            <TextView
+                android:id="@+id/wargaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.kewarganegaraan}"
+                app:layout_constraintBottom_toTopOf="@id/agama"
+                app:layout_constraintStart_toEndOf="@+id/warga"
+                app:layout_constraintTop_toBottomOf="@id/jKValue" />
+
+            <TextView
+                android:id="@+id/agama"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Agama"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/warga" />
+
+            <TextView
+                android:id="@+id/agamaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.agama}"
+                app:layout_constraintBottom_toTopOf="@id/alamat"
+                app:layout_constraintStart_toEndOf="@+id/agama"
+                app:layout_constraintTop_toBottomOf="@id/wargaValue" />
+
+            <TextView
+                android:id="@+id/alamat"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Alamat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/agama" />
+
+            <TextView
+                android:id="@+id/alamatValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.alamat}"
+                app:layout_constraintBottom_toTopOf="@id/rtMhs"
+                app:layout_constraintStart_toEndOf="@+id/alamat"
+                app:layout_constraintTop_toBottomOf="@id/agamaValue" />
+
+            <TextView
+                android:id="@+id/rtMhs"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Rt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/alamat" />
+
+            <TextView
+                android:id="@+id/rtMhsValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.rt}"
+                app:layout_constraintBottom_toTopOf="@id/rwMhs"
+                app:layout_constraintStart_toEndOf="@+id/rtMhs"
+                app:layout_constraintTop_toBottomOf="@id/alamatValue" />
+
+            <TextView
+                android:id="@+id/rwMhs"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Rw"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rtMhs" />
+
+            <TextView
+                android:id="@+id/rwMhsValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.rw}"
+                app:layout_constraintBottom_toTopOf="@id/kodePos"
+                app:layout_constraintStart_toEndOf="@+id/rwMhs"
+                app:layout_constraintTop_toBottomOf="@id/rtMhsValue" />
+
+            <TextView
+                android:id="@+id/kodePos"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Kode Pos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rwMhs" />
+
+            <TextView
+                android:id="@+id/kodePosValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.kodePos}"
+                app:layout_constraintBottom_toTopOf="@id/provinsi"
+                app:layout_constraintStart_toEndOf="@+id/kodePos"
+                app:layout_constraintTop_toBottomOf="@id/rwMhsValue" />
+
+            <TextView
+                android:id="@+id/provinsi"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Provinsi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/kodePos" />
+
+            <TextView
+                android:id="@+id/provinsiValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.provinsi}"
+                app:layout_constraintBottom_toTopOf="@id/kotKab"
+                app:layout_constraintStart_toEndOf="@+id/provinsi"
+                app:layout_constraintTop_toBottomOf="@id/kodePosValue" />
+
+            <TextView
+                android:id="@+id/kotKab"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Kot / Kab"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/provinsi" />
+
+            <TextView
+                android:id="@+id/kotKabValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.kota}"
+                app:layout_constraintBottom_toTopOf="@id/phoneMhs"
+                app:layout_constraintStart_toEndOf="@+id/kotKab"
+                app:layout_constraintTop_toBottomOf="@id/provinsiValue" />
+
+            <TextView
+                android:id="@+id/phoneMhs"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="No. Hp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/kotKab" />
+
+            <TextView
+                android:id="@+id/phoneMhsValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.phone}"
+                app:layout_constraintBottom_toTopOf="@id/emailMhs"
+                app:layout_constraintStart_toEndOf="@+id/phoneMhs"
+                app:layout_constraintTop_toBottomOf="@id/kotKabValue" />
+
+            <TextView
+                android:id="@+id/emailMhs"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phoneMhs" />
+
+            <TextView
+                android:id="@+id/emailMhsValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{pribadi.email}"
+                app:layout_constraintBottom_toTopOf="@id/textTitleParentData"
+                app:layout_constraintStart_toEndOf="@+id/emailMhs"
+                app:layout_constraintTop_toBottomOf="@id/phoneMhsValue" />
+
+            <TextView
+                android:id="@+id/textTitleParentData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Data Orang Tua"
+                android:textColor="@color/textPopupEditTextColor"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emailMhs" />
+
+            <TextView
+                android:id="@+id/namaAyah"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="Nama Ayah"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTitleParentData" />
+
+            <TextView
+                android:id="@+id/namaAyahValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.namaAyah}"
+                app:layout_constraintBottom_toTopOf="@id/nikAyah"
+                app:layout_constraintStart_toEndOf="@+id/namaAyah"
+                app:layout_constraintTop_toBottomOf="@id/textTitleParentData" />
+
+            <TextView
+                android:id="@+id/nikAyah"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Nik Ayah"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/namaAyah" />
+
+            <TextView
+                android:id="@+id/nikAyahValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.nikAyah}"
+                app:layout_constraintBottom_toTopOf="@id/namaIbu"
+                app:layout_constraintStart_toEndOf="@+id/nikAyah"
+                app:layout_constraintTop_toBottomOf="@id/namaAyahValue" />
+
+            <TextView
+                android:id="@+id/namaIbu"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Nama ibu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nikAyah" />
+
+            <TextView
+                android:id="@+id/namaIbuValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.namaIbu}"
+                app:layout_constraintBottom_toTopOf="@id/nikIbu"
+                app:layout_constraintStart_toEndOf="@+id/namaIbu"
+                app:layout_constraintTop_toBottomOf="@id/nikAyahValue" />
+
+            <TextView
+                android:id="@+id/nikIbu"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Nik ibu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/namaIbu" />
+
+            <TextView
+                android:id="@+id/nikIbuValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.nikIbu}"
+                app:layout_constraintBottom_toTopOf="@id/thnLahirAyah"
+                app:layout_constraintStart_toEndOf="@+id/nikIbu"
+                app:layout_constraintTop_toBottomOf="@id/namaIbuValue" />
+
+            <TextView
+                android:id="@+id/thnLahirAyah"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Th Lh Ayah"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nikIbu" />
+
+            <TextView
+                android:id="@+id/thnLahirAyahValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.tanggalLahirAyah}"
+                app:layout_constraintBottom_toTopOf="@id/thnLahirIbu"
+                app:layout_constraintStart_toEndOf="@+id/thnLahirAyah"
+                app:layout_constraintTop_toBottomOf="@id/nikIbuValue" />
+
+            <TextView
+                android:id="@+id/thnLahirIbu"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Th Lh Ibu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thnLahirAyah" />
+
+            <TextView
+                android:id="@+id/thnLahirIbuValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.tanggalLahirIbu}"
+                app:layout_constraintBottom_toTopOf="@id/alamatOrtu"
+                app:layout_constraintStart_toEndOf="@+id/thnLahirIbu"
+                app:layout_constraintTop_toBottomOf="@id/thnLahirAyahValue" />
+
+            <TextView
+                android:id="@+id/alamatOrtu"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Alamat Ortu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thnLahirIbu" />
+
+            <TextView
+                android:id="@+id/alamatOrtuValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.alamatParent}"
+                app:layout_constraintBottom_toTopOf="@id/phoneOrtu"
+                app:layout_constraintStart_toEndOf="@+id/alamatOrtu"
+                app:layout_constraintTop_toBottomOf="@id/thnLahirIbuValue" />
+
+            <TextView
+                android:id="@+id/phoneOrtu"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="No. Hp Ortu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/alamatOrtu" />
+
+            <TextView
+                android:id="@+id/phoneOrtuValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.phoneOrtu}"
+                app:layout_constraintBottom_toTopOf="@id/emailOrtu"
+                app:layout_constraintStart_toEndOf="@+id/phoneOrtu"
+                app:layout_constraintTop_toBottomOf="@id/alamatOrtuValue" />
+
+            <TextView
+                android:id="@+id/emailOrtu"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Email Ortu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phoneOrtu" />
+
+            <TextView
+                android:id="@+id/emailOrtuValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.emailParent}"
+                app:layout_constraintBottom_toTopOf="@id/pdkAyah"
+                app:layout_constraintStart_toEndOf="@+id/emailOrtu"
+                app:layout_constraintTop_toBottomOf="@id/phoneOrtuValue" />
+
+            <TextView
+                android:id="@+id/pdkAyah"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Pdk. Ak. Ayah"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailOrtu" />
+
+            <TextView
+                android:id="@+id/pdkAyahValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.pendidikanAyah}"
+                app:layout_constraintBottom_toTopOf="@id/pdkIbu"
+                app:layout_constraintStart_toEndOf="@+id/pdkAyah"
+                app:layout_constraintTop_toBottomOf="@id/emailOrtuValue" />
+
+            <TextView
+                android:id="@+id/pdkIbu"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Pdk. Ak. Ayah"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pdkAyah" />
+
+            <TextView
+                android:id="@+id/pdkIbuValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.pendidikanIbu}"
+                app:layout_constraintBottom_toTopOf="@id/pkjAyah"
+                app:layout_constraintStart_toEndOf="@+id/pdkIbu"
+                app:layout_constraintTop_toBottomOf="@id/pdkAyahValue" />
+
+            <TextView
+                android:id="@+id/pkjAyah"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Pkj. Ayah"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pdkIbu" />
+
+            <TextView
+                android:id="@+id/pkjAyahValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.pekerjaanAyah}"
+                app:layout_constraintBottom_toTopOf="@id/pkjIbu"
+                app:layout_constraintStart_toEndOf="@+id/pkjAyah"
+                app:layout_constraintTop_toBottomOf="@id/pdkIbuValue" />
+
+            <TextView
+                android:id="@+id/pkjIbu"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Pkj. Ibu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pkjAyah" />
+
+            <TextView
+                android:id="@+id/pkjIbuValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{parent.pekerjaanIbu}"
+                app:layout_constraintBottom_toTopOf="@id/textTitleSchoolData"
+                app:layout_constraintStart_toEndOf="@+id/pkjIbu"
+                app:layout_constraintTop_toBottomOf="@id/pkjAyahValue" />
+
+            <TextView
+                android:id="@+id/textTitleSchoolData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Data Sekolah Asal"
+                android:textColor="@color/textPopupEditTextColor"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pkjIbu" />
+
+            <TextView
+                android:id="@+id/univAsal"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="Univ Asal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTitleSchoolData" />
+
+            <TextView
+                android:id="@+id/univAsalValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{school.namaUnivAsal}"
+                app:layout_constraintBottom_toTopOf="@+id/fakultasAsal"
+                app:layout_constraintStart_toEndOf="@+id/univAsal"
+                app:layout_constraintTop_toBottomOf="@id/textTitleSchoolData" />
+
+            <TextView
+                android:id="@+id/fakultasAsal"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Fak. Asal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/univAsal" />
+
+            <TextView
+                android:id="@+id/fakultasAsalValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{school.namaFakultasAsal}"
+                app:layout_constraintBottom_toTopOf="@+id/prodiAsal"
+                app:layout_constraintStart_toEndOf="@+id/fakultasAsal"
+                app:layout_constraintTop_toBottomOf="@id/univAsalValue" />
+
+            <TextView
+                android:id="@+id/prodiAsal"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Prod. Asal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fakultasAsal" />
+
+            <TextView
+                android:id="@+id/prodiAsalValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{school.namaProdiAsal}"
+                app:layout_constraintBottom_toTopOf="@+id/provinsiAsal"
+                app:layout_constraintStart_toEndOf="@+id/prodiAsal"
+                app:layout_constraintTop_toBottomOf="@id/fakultasAsalValue" />
+
+            <TextView
+                android:id="@+id/provinsiAsal"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Prov. Asal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prodiAsal" />
+
+            <TextView
+                android:id="@+id/provinsiAsalValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{school.provinsiUnivAsal}"
+                app:layout_constraintBottom_toTopOf="@+id/kotKabAsal"
+                app:layout_constraintStart_toEndOf="@+id/provinsiAsal"
+                app:layout_constraintTop_toBottomOf="@id/prodiAsalValue" />
+
+            <TextView
+                android:id="@+id/kotKabAsal"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Kot / Kab"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/provinsiAsal" />
+
+            <TextView
+                android:id="@+id/kotKabAsalValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{school.kotaUnivAsal}"
+                app:layout_constraintBottom_toTopOf="@+id/alamatUniv"
+                app:layout_constraintStart_toEndOf="@+id/kotKabAsal"
+                app:layout_constraintTop_toBottomOf="@id/provinsiAsalValue" />
+
+            <TextView
+                android:id="@+id/alamatUniv"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Alt. Univ"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/kotKabAsal" />
+
+            <TextView
+                android:id="@+id/alamatUnivValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{school.alamatUnivAsal}"
+                app:layout_constraintBottom_toTopOf="@+id/kodePosUniv"
+                app:layout_constraintStart_toEndOf="@+id/alamatUniv"
+                app:layout_constraintTop_toBottomOf="@id/kotKabAsalValue" />
+
+            <TextView
+                android:id="@+id/kodePosUniv"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Kode Pos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/alamatUniv" />
+
+            <TextView
+                android:id="@+id/kodePosUnivValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{school.kodePosUnivAsal}"
+                app:layout_constraintBottom_toTopOf="@+id/akreUniv"
+                app:layout_constraintStart_toEndOf="@+id/kodePosUniv"
+                app:layout_constraintTop_toBottomOf="@id/alamatUnivValue" />
+
+            <TextView
+                android:id="@+id/akreUniv"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Akr. Univ"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/kodePosUniv" />
+
+            <TextView
+                android:id="@+id/akreUnivValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{school.akreditasiUnivAsal}"
+                app:layout_constraintBottom_toTopOf="@+id/nilaiIpk"
+                app:layout_constraintStart_toEndOf="@+id/akreUniv"
+                app:layout_constraintTop_toBottomOf="@id/kodePosUnivValue" />
+
+            <TextView
+                android:id="@+id/nilaiIpk"
+                android:layout_width="87dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:text="N. Ipk"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/akreUniv" />
+
+            <TextView
+                android:id="@+id/nilaiIpkValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{school.nilaiIPK}"
+                app:layout_constraintStart_toEndOf="@+id/nilaiIpk"
+                app:layout_constraintTop_toBottomOf="@id/akreUnivValue" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

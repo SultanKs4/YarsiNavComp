@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/form_nav"
+    app:startDestination="@id/selfFragment">
+
+    <fragment
+        android:id="@+id/selfFragment"
+        android:name="com.natlus.yarsinavcomp.view.SelfFragment"
+        android:label="SelfFragment"
+        tools:layout="@layout/fragment_self">
+        <action
+            android:id="@+id/action_selfFragment_to_parentFragment"
+            app:destination="@id/parentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parentFragment"
+        android:name="com.natlus.yarsinavcomp.view.ParentFragment"
+        android:label="ParentFragment"
+        tools:layout="@layout/fragment_parent">
+        <action
+            android:id="@+id/action_parentFragment_to_schoolFragment"
+            app:destination="@id/schoolFragment" />
+        <argument
+            android:name="pribadi"
+            app:argType="com.natlus.yarsinavcomp.models.Pribadi" />
+    </fragment>
+    <fragment
+        android:id="@+id/schoolFragment"
+        android:name="com.natlus.yarsinavcomp.view.SchoolFragment"
+        android:label="SchoolFragment"
+        tools:layout="@layout/fragment_school">
+        <action
+            android:id="@+id/action_schoolFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <argument
+            android:name="pribadi"
+            app:argType="com.natlus.yarsinavcomp.models.Pribadi" />
+        <argument
+            android:name="parent"
+            app:argType="com.natlus.yarsinavcomp.models.Parent" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.natlus.yarsinavcomp.view.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result" >
+        <argument
+            android:name="parent"
+            app:argType="com.natlus.yarsinavcomp.models.Parent" />
+        <argument
+            android:name="pribadi"
+            app:argType="com.natlus.yarsinavcomp.models.Pribadi" />
+        <argument
+            android:name="school"
+            app:argType="com.natlus.yarsinavcomp.models.School" />
+    </fragment>
+</navigation>

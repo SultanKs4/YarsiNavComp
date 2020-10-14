@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">YARSI NavComp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="dataFakultas">
+        <item>SEKOLAH PASCASARJANA</item>
+    </string-array>
+    <string-array name="dataProdi">
+        <item>MAGISTER MANAJEMEN (S-2)</item>
+        <item>MAGISTER KENOTARIATAN (S-2)</item>
+        <item>MAGISTER SAINS BIOMEDIS (S-2)</item>
+    </string-array>
+    <string-array name="dataStatus">
+        <item>Baru</item>
+        <item>Pindahan Luar Yarsi</item>
+        <item>Pindahan Dari Fakultas YARSI</item>
+        <item>Pindahan Dari Prodi Fakultas YARSI</item>
+    </string-array>
+    <string-array name="dataAgama">
+        <item>ISLAM</item>
+        <item>KRISTEN</item>
+        <item>KATOLIK</item>
+        <item>HINDU</item>
+        <item>BUDDHA</item>
+        <item>KONG HU CU</item>
+    </string-array>
+    <string-array name="dataProvinsi">
+        <item>DKI Jakarta</item>
+        <item>Banten</item>
+        <item>Jawa Barat</item>
+        <item>Jawa Tengah</item>
+        <item>DI Yogyakarta</item>
+        <item>Jawa Timur</item>
+    </string-array>
+    <string-array name="dataKota">
+        <item>Jakarta Pusat</item>
+        <item>Pandeglang</item>
+        <item>Bandung</item>
+        <item>Semarang</item>
+        <item>Bantul</item>
+        <item>Malang</item>
+    </string-array>
 </resources>
